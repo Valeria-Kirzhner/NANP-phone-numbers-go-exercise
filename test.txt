@@ -1,0 +1,27 @@
+// go on each char and check if is == digit and push digit to a new var
+// 		check if num len == 11
+//			if var first char == 1 
+//				ok: in this case remove first character of the new var
+// 			else if first char !== 1
+//				err:
+// 		else if num len is bigger then 9 and less that 11 
+//			start_work
+// in case char !== digit 
+//		check_if_char_validy
+
+
+// Func check_if_char_validy (no latters and so)
+// 		allow . + %s - ()
+
+
+// func check_code_area_validity
+//		take first 3 chars into a var
+//		allow 2-9
+
+// func check_exchange_code
+//		take forth char and check validiyu
+//		allow 2-9
+
+//	func start_work
+//		check_code_area_validity
+//		check_exchange_code
