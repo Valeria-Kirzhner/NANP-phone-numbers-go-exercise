@@ -22,10 +22,16 @@ func Number(test string) (string, error){
 			}else {
 				continue
 			}
-			// if no - return an error, if yes continue
-
-		}		
+		}
 		newNumber = newNumber + c
+		len := len(newNumber)
+		if (len == 11 ){
+			// check country code
+		} else if (len > 9 || len < 11) {
+			// do work
+		} else {
+			// error
+		}
 		fmt.Println("newNumber = ", newNumber)
 	}
 	return newNumber, nil
