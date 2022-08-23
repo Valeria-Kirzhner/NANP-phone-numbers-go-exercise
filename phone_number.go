@@ -37,6 +37,10 @@ func Number(test string) (string, error){
 	} else if (len < 10 || len > 10) {
 		return newNumber, errors.New("number length must not be less or bigger then 10")
 	} 
+	err = checkNNumber(newNumber)
+	if err != nil {
+		return newNumber, err
+	}	
 	fmt.Println("newNumber = ", newNumber)
 	return newNumber, nil
 
@@ -56,6 +60,13 @@ func removeCountryCode(newNumber string) (string,error) {
 		return newNumber, errors.New("Country code can be '1' only")
 	}
 }
-// func check_code_area_validity() {
+func checkNNumber(newNumber string) (error) {
 
-// }
+	firstN:= newNumber[0:1]
+	firthCharacter:= newNumber[3:4]
+	if ( firstN == "1" || firstN == "0"  || firthCharacter == "1" || firthCharacter == "0"  ){
+		return errors.New("Country code can be '1' only")
+
+	} 
+	return nil
+}
