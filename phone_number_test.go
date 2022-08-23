@@ -21,30 +21,30 @@ func TestNumber(t *testing.T) {
 	}
 }
 
-// func BenchmarkNumber(b *testing.B) {
-// 	for i := 0; i < b.N; i++ {
-// 		for _, test := range numberTests {
-// 			Number(test.input)
-// 		}
-// 	}
-// }
+func BenchmarkNumber(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		for _, test := range numberTests {
+			Number(test.input)
+		}
+	}
+}
 
-// func TestAreaCode(t *testing.T) {
-// 	for _, test := range numberTests {
-// 		actual, actualErr := AreaCode(test.input)
-// 		if !test.expectErr {
-// 			if actual != test.areaCode {
-// 				t.Errorf("FAIL: %s\nAreaCode(%q): expected [%s], actual: [%s]", test.description, test.input, test.areaCode, actual)
-// 			}
-// 			if actualErr != nil {
-// 								var _ error = actualErr
-// 				t.Errorf("FAIL: %s\nAreaCode(%q): expected no error, but error is: %s", test.description, test.input, actualErr)
-// 			}
-// 		} else if actualErr == nil {
-// 						t.Errorf("FAIL: %s\nAreaCode(%q): expected an error, but error is nil", test.description, test.input)
-// 		}
-// 	}
-// }
+func TestAreaCode(t *testing.T) {
+	for _, test := range numberTests {
+		actual, actualErr := AreaCode(test.input)
+		if !test.expectErr {
+			if actual != test.areaCode {
+				t.Errorf("FAIL: %s\nAreaCode(%q): expected [%s], actual: [%s]", test.description, test.input, test.areaCode, actual)
+			}
+			if actualErr != nil {
+								var _ error = actualErr
+				t.Errorf("FAIL: %s\nAreaCode(%q): expected no error, but error is: %s", test.description, test.input, actualErr)
+			}
+		} else if actualErr == nil {
+						t.Errorf("FAIL: %s\nAreaCode(%q): expected an error, but error is nil", test.description, test.input)
+		}
+	}
+}
 
 // func BenchmarkAreaCode(b *testing.B) {
 // 	for i := 0; i < b.N; i++ {

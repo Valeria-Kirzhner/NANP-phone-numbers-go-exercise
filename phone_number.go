@@ -38,10 +38,10 @@ func Number(test string) (string, error){
 		return newNumber, errors.New("number length must not be less or bigger then 10")
 	} 
 	err = checkNNumber(newNumber)
-	if err != nil {
+	if err != nil { 
 		return newNumber, err
 	}	
-	fmt.Println("newNumber = ", newNumber)
+	//fmt.Println("newNumber = ", newNumber)
 	return newNumber, nil
 
 }
@@ -69,4 +69,16 @@ func checkNNumber(newNumber string) (error) {
 
 	} 
 	return nil
+}
+func AreaCode(test string) (string, error) {
+	var codeArea string
+	phoneNumber, err := Number(test)
+
+	if err != nil { 
+	 return test, errors.New("This input not pass Number function")
+	}	
+	codeArea = codeArea + phoneNumber[0:3]
+	//fmt.Println("codeArea = ", codeArea)
+
+	return codeArea, nil
 }
