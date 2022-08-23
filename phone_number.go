@@ -78,7 +78,19 @@ func AreaCode(test string) (string, error) {
 	 return test, errors.New("This input not pass Number function")
 	}	
 	codeArea = codeArea + phoneNumber[0:3]
-	//fmt.Println("codeArea = ", codeArea)
-
 	return codeArea, nil
+}
+func Format(test string) (string, error) {
+
+	phoneNumber, err := Number(test)
+	if err != nil { 
+	 return test, errors.New("This input not pass Number function")
+	}
+
+	codeArea, err := AreaCode(test)
+	if err != nil { 
+		return test, errors.New("This input not pass AreaCode function")
+	}
+    res := fmt.Sprintf("(%s) %s-%s", codeArea, phoneNumber[3:6], phoneNumber[6:10])
+	return res, nil
 }
