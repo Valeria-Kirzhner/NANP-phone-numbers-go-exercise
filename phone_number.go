@@ -16,7 +16,6 @@ func Number(test string) (string, error){
 		c := fmt.Sprintf("%c", char)
 
 		if !unicode.IsDigit(char) {
-
 			validCharacter := is_string_valid(c)
 			if validCharacter == false {
 				return test, errors.New("not a valid char")
@@ -28,7 +27,6 @@ func Number(test string) (string, error){
 	}
 		
 	len := len(newNumber)
-
 	if (len == 11 ){
 		newNumber, err = removeCountryCode(newNumber)
 		if err != nil {
@@ -41,9 +39,7 @@ func Number(test string) (string, error){
 	if err != nil { 
 		return newNumber, err
 	}	
-	//fmt.Println("newNumber = ", newNumber)
 	return newNumber, nil
-
 }
 
 func is_string_valid(char string) bool {
@@ -61,25 +57,23 @@ func removeCountryCode(newNumber string) (string,error) {
 	}
 }
 func checkNNumber(newNumber string) (error) {
-
 	firstN:= newNumber[0:1]
 	firthCharacter:= newNumber[3:4]
 	if ( firstN == "1" || firstN == "0"  || firthCharacter == "1" || firthCharacter == "0"  ){
-		return errors.New("Country code can be '1' only")
-
+		return errors.New("N number can be 2-9 only")
 	} 
 	return nil
 }
 func AreaCode(test string) (string, error) {
 	var codeArea string
 	phoneNumber, err := Number(test)
-
 	if err != nil { 
 	 return test, errors.New("This input not pass Number function")
 	}	
 	codeArea = codeArea + phoneNumber[0:3]
 	return codeArea, nil
 }
+
 func Format(test string) (string, error) {
 
 	phoneNumber, err := Number(test)
