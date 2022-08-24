@@ -16,7 +16,9 @@ func Number(test string) (string, error){
 		c := fmt.Sprintf("%c", char)
 
 		if !unicode.IsDigit(char) {
+
 			validCharacter := is_string_valid(c)
+
 			if validCharacter == false {
 				return test, errors.New("not a valid char")
 			} else {
@@ -81,10 +83,6 @@ func Format(test string) (string, error) {
 	 return test, errors.New("This input not pass Number function")
 	}
 
-	codeArea, err := AreaCode(test)
-	if err != nil { 
-		return test, errors.New("This input not pass AreaCode function")
-	}
-    res := fmt.Sprintf("(%s) %s-%s", codeArea, phoneNumber[3:6], phoneNumber[6:10])
+    res := fmt.Sprintf("(%s) %s-%s", phoneNumber[0:3], phoneNumber[3:6], phoneNumber[6:10])
 	return res, nil
 }
